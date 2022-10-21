@@ -6,7 +6,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: xx-large;
+    /* font size messes things up 🔴🔴 */
+    font-size: x-large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 h1 {
@@ -20,6 +21,7 @@ h2 {
     margin-bottom: 4rem;
 }
 
+/* check here to see the container of the page 🔴 */
 .container {
     width: 100vw;
     height: 100vh;
