@@ -1,9 +1,9 @@
-var username = document.querySelectorAll('#username')
-var saveScoreBtn = document.querySelectorAll('#saveScoreBtn')
-var finalScore = document.querySelectorAll('#finalScore')
-var mostRecentScore = document.querySelectorAll('#mostRecentScore')
+var username = document.querySelector('#username')
+var saveScoreBtn = document.querySelector('#saveScoreBtn')
+var finalScore = document.querySelector('#finalScore')
+var mostRecentScore = localStorage.getItem('mostRecentScore')
 
-var highScores = JSON.parse(localStorage.getItem('hignScores')) || []
+var highScores = JSON.parse(localStorage.getItem('highScores')) || []
 
 var MAX_HIGH_SCORES = 5
 
@@ -15,11 +15,11 @@ username.addEventListener('keyup', () => {
 })
 
 saveHighScore = e => {
-    e.preventDefault ()
+    e.preventDefault()
 
     var score = {
         score: mostRecentScore,
-        name: username.value, 
+        name: username.value,
     }
 
     highScores.push(score)
