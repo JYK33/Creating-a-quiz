@@ -1,9 +1,5 @@
 body {
     color: #fff;
-    /* margin: 0;
-    height:100vh;
-    width:100%;
-    max-width:100vh; */
 }
 
 /* Targets the choice boxes as well as the question and score */
@@ -13,7 +9,7 @@ body {
     width: 100%;
     border-radius: 4px;
     background: rgb(18, 93, 255);
-    font-size: 3rem;
+    font-size: 3.5rem;
     min-width: 50rem;
     /* check the rem size if it dosent fit on screen  */
 }
@@ -54,9 +50,9 @@ body {
     justify-content: space-between;
 }
 
-.hub-prefix {
+.hud-prefix {
     text-align: center;
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 .hud-main-text {
