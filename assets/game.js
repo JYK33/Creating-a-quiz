@@ -3,6 +3,9 @@ var choices = Array.from(document.querySelectorAll('.choice-text'));
 var progressText = document.querySelector('#progressText');
 var scoreText = document.querySelector('#score');
 var progressBarFull = document.querySelector('#progressBarFull');
+// timer stuff
+var timeEl = document.querySelector('#timeLeft');
+
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -13,7 +16,7 @@ let availableQuestions = []
 // This is where the questions will be put
 let questions = [
     {
-        question: 'JavaScript is a ____-side programming language.',
+        question: 'JavaScript is a ____ - side programming language.',
         choice1: 'Client',
         choice2: 'Client and Server',
         choice3: 'Server',
@@ -49,9 +52,29 @@ let questions = [
         // the correct answer is choice 4, answer = choice "4"
     }
 ]
-
 var SCORE_POINTS = 100
 var MAX_QUESTIONS = 4
+
+// timer stuff 
+var secondsLeft = 120;
+
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+ 
+   timeEl.textContent = secondsLeft 
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      
+      localStorage.setItem('mostRecentScore', score)
+      return window.location.assign('/end.html')
+    }
+
+  }, 1000);
+}
+
 
 startGame = () => {
     questionCounter = 0
@@ -59,6 +82,7 @@ startGame = () => {
     // questions come from the array above
     availableQuestions = [...questions]
     getNewQuestion()
+    setTime()
 }
 
 // check the || if something breaks in js for now!!!!!!!! 10/24 'questionCounter
