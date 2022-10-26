@@ -56,7 +56,7 @@ var SCORE_POINTS = 100
 var MAX_QUESTIONS = 4
 
 // timer stuff 
-var secondsLeft = 120;
+var secondsLeft = 100;
 
 function setTime() {
   // Sets interval in variable
@@ -124,6 +124,10 @@ choices.forEach(choice => {
 
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
+        }
+        // time decreased every time incorrect answer is picked  
+        if(classToApply === 'incorrect') {
+            secondsLeft -= 25;
         }
 
         selectedChoice.parentElement.classList.add(classToApply)
