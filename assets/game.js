@@ -44,7 +44,7 @@ let questions = [
     },
     {
         question: 'Which are the correct “if” statements to execute certain code if “x” is equal to 2?',
-        choice1: 'if(x=2)',
+        choice1: 'if(x<=2)',
         choice2: 'if(x!=2)',
         choice3: 'if(x2)',
         choice4: 'if(x==2)',
